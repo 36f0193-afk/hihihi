@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>급식 낭비 비용 계산기</title>
+<title>밥값해 🥕</title>
 <style>
 :root{--ink:#172b2a;--muted:#61716f;--line:#dce7e3;--bg:#f4f8f6;--green:#176b55;--mint:#e2f3eb;--orange:#fff1dc;--white:#fff}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
@@ -31,42 +31,42 @@ button{border:0;border-radius:11px;padding:11px 16px;font:inherit;font-weight:75
 <body>
 <div class="wrap">
   <header class="hero">
-    <div class="kicker">School food waste · estimator</div>
-    <h1>급식 낭비 비용 계산기</h1>
+    <div class="kicker">🥬 School food waste · estimator 🥕</div>
+    <h1>밥값해 🥦</h1>
     <p>식재료를 선택하고 제공량(kg)을 입력하면, 새로 정리한 kg당 가격과 최신 선호도 조사 결과를 이용해 예상 잔반량과 비용을 계산합니다.</p>
   </header>
 
   <section class="panel">
-    <h2>식재료 입력</h2>
+    <h2>🥕 식재료 입력</h2>
     <div class="grid">
       <div>
-        <label for="ingredient">식재료 이름</label>
+        <label for="ingredient">🥬 식재료 이름</label>
         <select id="ingredient"></select>
         <div class="hint">설문조사에 있는 식재료와 연결되는 품목만 표시합니다.</div>
       </div>
       <div>
-        <label for="quantity">제공량</label>
+        <label for="quantity">🥔 제공량</label>
         <input id="quantity" type="number" min="0" step="any" placeholder="예: 10">
         <div class="hint" id="unitHint">식재료 단위를 불러오는 중…</div>
       </div>
       <div>
-        <label>자동 적용 정보</label>
+        <label>🍅 자동 적용 정보</label>
         <div style="padding:12px 13px;border:1px solid var(--line);border-radius:11px;background:#f8fbf9;min-height:49px" id="autoInfo">식재료를 선택해 주세요.</div>
         <div class="hint">가격은 2026년 10월 28일 기준입니다.</div>
       </div>
     </div>
     <div class="actions">
-      <button class="primary" id="addBtn">계산 목록에 추가</button>
-      <button class="secondary" id="clearInputBtn">입력 초기화</button>
+      <button class="primary" id="addBtn">🥦 계산 목록에 추가</button>
+      <button class="secondary" id="clearInputBtn">🧅 입력 초기화</button>
     </div>
   </section>
 
   <section class="panel">
-    <h2>계산 결과</h2>
+    <h2>🍅 계산 결과</h2>
     <div class="summary">
-      <div class="metric"><span>예상 잔반 비용 합계</span><strong id="totalCost">0원</strong></div>
-      <div class="metric"><span>입력한 식재료 수</span><strong id="itemCount">0개</strong></div>
-      <div class="metric"><span>예상 잔반량 합계</span><strong id="totalWaste">—</strong></div>
+      <div class="metric"><span>🥕 예상 잔반 비용 합계</span><strong id="totalCost">0원</strong></div>
+      <div class="metric"><span>🥬 입력한 식재료 수</span><strong id="itemCount">0개</strong></div>
+      <div class="metric"><span>🥔 예상 잔반량 합계</span><strong id="totalWaste">—</strong></div>
     </div>
     <div class="table-wrap" style="margin-top:16px">
       <table>
@@ -75,25 +75,25 @@ button{border:0;border-radius:11px;padding:11px 16px;font:inherit;font-weight:75
       </table>
     </div>
     <div class="actions">
-      <button class="secondary" id="csvBtn">결과 CSV 다운로드</button>
-      <button class="secondary" id="copyBtn">결과 복사</button>
-      <button class="danger" id="resetBtn">전체 초기화</button>
+      <button class="secondary" id="csvBtn">📊 결과 CSV 다운로드</button>
+      <button class="secondary" id="copyBtn">📋 결과 복사</button>
+      <button class="danger" id="resetBtn">🧹 전체 초기화</button>
     </div>
     <p class="small">비용은 원 단위로 반올림해 표시합니다. 제공량은 kg 단위로 입력합니다. 가격은 2026년 10월 28일 기준 kg당 가격입니다.</p>
   </section>
 
   <section class="panel">
-    <h2>계산 기준</h2>
+    <h2>🧅 계산 기준</h2>
     <div class="note">
-      <strong>해석상 주의:</strong> 설문에서 식재료를 고른 비율은 실제로 그 식재료를 남기는 비율과 같다고 입증된 값이 아닙니다. 이 계산기는 설문 선택 비율을 예상 잔반 비율의 대리 지표로 사용합니다. 따라서 결과는 실측 비용이 아니라 추정치입니다.
+      <strong>🌽 해석상 주의:</strong> 설문에서 식재료를 고른 비율은 실제로 그 식재료를 남기는 비율과 같다고 입증된 값이 아닙니다. 이 계산기는 설문 선택 비율을 예상 잔반 비율의 대리 지표로 사용합니다. 따라서 결과는 실측 비용이 아니라 추정치입니다.
     </div>
-    <p><strong>계산식</strong></p>
+    <p><strong>🧮 계산식</strong></p>
     <p>가중치 = 해당 식재료를 선택한 학생 수 ÷ 전체 응답자 수</p>
     <p>예상 잔반량 = 입력한 제공량 × 가중치</p>
     <p>예상 잔반 비용 = 가격표의 단위당 가격 × 예상 잔반량</p>
     <p class="small">예: 가지 제공량이 10kg이면 제공량에 10을 입력합니다. 가격표의 kg당 가격에 10을 곱해 제공량의 원가를 계산합니다.</p>
   </section>
-  <div class="footer">가격 기준: 2026년 10월 28일(E) · 제공된 설문 및 가격표 파일 기반</div>
+  <div class="footer">🥦 🥕 🥬 가격 기준: 2026년 10월 28일(E) · 제공된 설문 및 가격표 파일 기반 🥔</div>
 </div>
 <script>
 const DATA = {"survey":[{"name":"무","selected":2,"total":17,"weight":0.11764705882352941},{"name":"대파","selected":1,"total":17,"weight":0.058823529411764705},{"name":"양배추","selected":4,"total":17,"weight":0.23529411764705882},{"name":"배추","selected":0,"total":17,"weight":0.0},{"name":"당근","selected":5,"total":17,"weight":0.29411764705882354},{"name":"오이","selected":4,"total":17,"weight":0.23529411764705882},{"name":"애호박","selected":5,"total":17,"weight":0.29411764705882354},{"name":"가지","selected":7,"total":17,"weight":0.4117647058823529},{"name":"양파","selected":2,"total":17,"weight":0.11764705882352941},{"name":"버섯","selected":4,"total":17,"weight":0.23529411764705882},{"name":"사과","selected":2,"total":17,"weight":0.11764705882352941},{"name":"배","selected":2,"total":17,"weight":0.11764705882352941}],"prices":[{"name":"배추","unit":"kg","price":385.0,"category":"농산물"},{"name":"무","unit":"kg","price":647.0,"category":"농산물"},{"name":"양파","unit":"kg","price":1199.0,"category":"농산물"},{"name":"대파","unit":"kg","price":1354.0,"category":"농산물"},{"name":"양배추","unit":"kg","price":2630.0,"category":"농산물"},{"name":"당근","unit":"kg","price":2452.0,"category":"농산물"},{"name":"오이","unit":"kg","price":26907.0,"category":"농산물"},{"name":"애호박","unit":"kg","price":3598.0,"category":"농산물"},{"name":"가지","unit":"kg","price":2785.0,"category":"과일·축산물"},{"name":"버섯","unit":"kg","price":3049.0,"category":"과일·축산물"},{"name":"사과","unit":"kg","price":3499.0,"category":"과일·축산물"},{"name":"배","unit":"kg","price":2163.0,"category":"과일·축산물"}]};
